@@ -13,7 +13,8 @@ def recalculate_totals(df):
 def display_category(df, category):
     st.header(category)
     category_df = df[df['Parts'] == category]
-    edited_df = st.data_editor(category_df)
+    edited_df = st.data_editor(category_df, key=f"editor_{category}")
+
     return edited_df
 
 st.title('IT Infrastructure Integration Budget')
